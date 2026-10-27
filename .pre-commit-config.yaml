@@ -1,0 +1,30 @@
+# Aim1_Code is excluded until it is brought into the package.
+exclude: ^(renv/|Aim1_Code/)
+
+repos:
+  # Cross-language hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+
+  # R hooks
+  - repo: local
+    hooks:
+    - id: style-files
+      name: Style R files
+      entry: Rscript -e "styler::style_file(commandArgs(trailingOnly = TRUE))"
+      language: system
+      types: [r]
+
+    - id: lintr
+      name: Lint R files
+      entry: >-
+        Rscript -e "n <- 0;
+        for (f in commandArgs(trailingOnly = TRUE)) { l <- lintr::lint(f); print(l); n <- n + length(l) };
+        quit(status = as.integer(n > 0))"
+      language: system
+      types: [r]

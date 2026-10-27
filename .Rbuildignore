@@ -1,0 +1,11 @@
+^renv$
+^renv\.lock$
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.github$
+^\.lintr$
+^\.pre-commit-config\.yaml$
+^LICENSE\.md$
+^README\.Rmd$
+^Aim1_Code$
+^\.Rprofile$
