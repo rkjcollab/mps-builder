@@ -37,7 +37,7 @@ renv::snapshot()
 
 ### Pre-commit Setup
 
-Install precommit hooks:
+One time before making any commits, install precommit hooks:
 
 ```bash
 pre-commit install
