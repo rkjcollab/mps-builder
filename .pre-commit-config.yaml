@@ -12,19 +12,8 @@ repos:
       - id: check-added-large-files
 
   # R hooks
-  - repo: local
+  - repo: https://github.com/lorenzwalthert/precommit
+    rev: v0.4.3.9035
     hooks:
-    - id: style-files
-      name: Style R files
-      entry: Rscript -e "styler::style_file(commandArgs(trailingOnly = TRUE))"
-      language: system
-      types: [r]
-
-    - id: lintr
-      name: Lint R files
-      entry: >-
-        Rscript -e "n <- 0;
-        for (f in commandArgs(trailingOnly = TRUE)) { l <- lintr::lint(f); print(l); n <- n + length(l) };
-        quit(status = as.integer(n > 0))"
-      language: system
-      types: [r]
+      - id: style-files
+      - id: lintr

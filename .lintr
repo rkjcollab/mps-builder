@@ -1,6 +1,3 @@
 linters: linters_with_defaults()
-exclusions: list(
-    "renv",
-    "Aim1_Code"
-  )
+exclusions: list("renv", "Aim1_Code")
 encoding: "UTF-8"
