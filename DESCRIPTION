@@ -10,9 +10,25 @@ Description: A tool for building a methylation profile score (MPS) from DNA
 License: MIT + file LICENSE
 URL: https://github.com/rkjcollab/mps-builder
 BugReports: https://github.com/rkjcollab/mps-builder/issues
+Imports:
+    caret,
+    foreach,
+    ggplot2,
+    glmnet,
+    grid,
+    matrixStats,
+    parallel,
+    pROC,
+    progress,
+    ranger,
+    stats,
+    utils,
+    VennDiagram,
+    xgboost
 Suggests:
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    withr
 Config/testthat/edition: 3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.3
+Config/roxygen2/version: 8.1.1

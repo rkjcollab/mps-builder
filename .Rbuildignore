@@ -9,3 +9,4 @@
 ^README\.Rmd$
 ^Aim1_Code$
 ^\.Rprofile$
+^data-raw$

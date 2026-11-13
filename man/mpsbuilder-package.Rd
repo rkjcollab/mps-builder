@@ -21,6 +21,7 @@ Useful links:
 
 Authors:
 \itemize{
+  \item Sarah D. Slack \email{sarahdslack@gmail.com}
   \item Kirk Hohsfield
 }
 
