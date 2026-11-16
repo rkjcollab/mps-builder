@@ -1,0 +1,33 @@
+# Aim1_Code is excluded until it is brought into the package.
+exclude: ^(renv/|Aim1_Code/)
+
+repos:
+  # Cross-language hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+
+  # R hooks
+  - repo: https://github.com/lorenzwalthert/precommit
+    rev: v0.4.3.9035
+    hooks:
+      - id: style-files
+
+  # lintr runs on the project's renv library, so load_all() finds the package's
+  # dependencies without listing them here. load_all() lets lintr see functions
+  # defined in other files.
+  - repo: local
+    hooks:
+      - id: lintr
+        name: lintr
+        entry: >-
+          Rscript -e "pkgload::load_all(quiet = TRUE);
+          lints <- lapply(commandArgs(trailingOnly = TRUE), lintr::lint);
+          for (l in lints) print(l);
+          quit(status = as.integer(sum(lengths(lints)) > 0))"
+        language: system
+        types: [r]
