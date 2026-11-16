@@ -85,7 +85,7 @@ they are out of date.
 
 ### Running Tests
 
-Unit tests use small simulated data files in `tests/testthat/testdata/`. Run
+Unit tests use small simulated data files in `tests/testthat/fixtures/`. Run
 them from R:
 
 ```r
@@ -103,7 +103,7 @@ devtools::test(filter = "filter_cpgs")
 To regenerate the test data files, from the repository root:
 
 ```bash
-Rscript data-raw/make_testdata.R
+Rscript tests/testthat/fixtures/make_testdata.R
 
 ```
 
